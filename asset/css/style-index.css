@@ -1,0 +1,139 @@
+:root{
+    --header-height: 70px;
+    --main-bg: #d5d5d5;
+    --main-transition: all 0.3s ease;
+    --main-color: whitesmoke;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+input{
+    outline: none;
+}
+.container{
+    max-width: 100%;
+    margin-left: 50px;
+}
+.row-flex{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+/*header-------------*/
+header .row-flex{
+    align-items: center;
+} 
+header {
+    height: var(--header-height);
+    border-bottom: 1px solid #ddd;    
+}
+.logo img{
+    width: 150px;
+    cursor: pointer;
+    margin-left: 1px;
+}
+.menu nav ul{
+    display: flex;
+}
+.menu nav ul li{
+    padding: 0 10px;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+.menu nav ul li a{
+   line-height: var(--header-height);
+   font-size: smaller;
+}
+.search {
+    position: relative;
+}
+.search i {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.menu nav ul li:hover{
+    background-color: var(--main-bg);
+}
+.search input{
+    height: 30px;
+    border: 1px solid black;
+    padding-left: 20px;
+   border-radius: 15px;
+}
+.login a i{
+    font-size: larger;
+    cursor: pointer;
+}
+.cart i {
+    font-size: larger;
+    cursor: pointer;
+    position: relative;
+}
+.cart i::after{
+    position: absolute;
+    display: flex;
+    content: attr(number);
+    width: 16px;
+    height: 16px;
+    right: 67px;
+    top: -8px;
+    background-color: black;
+    border-radius: 50%;
+    color: var(--main-color);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+}
+/*slider------------  */
+
+.slider-items{
+    position: relative;
+}
+.slider-item{
+    position: absolute;
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: var(--main-transition)
+}
+.slider-item.active{
+    display: block;
+    opacity: 1;
+}
+.slider-item img{
+    width: 100%;
+    height: auto;
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+    user-select: none;
+}
+.prev{
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
